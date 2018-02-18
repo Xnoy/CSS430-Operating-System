@@ -1,0 +1,9 @@
+If you were to modify queue2 to run like a FCFS algorithm rather than a 2000ms time quantum, then the overall program would end sooner. 
+This is because the program would run the thread until it ended rather than switch threads. This would mean that the CPU would not idle
+and the threads would run for the correct amount of time. When I say this, I mean that since we are not specifying a time quantum, the 
+threads would run for their need amount rather than 2000ms (which may be too much or too little). If you look inside the statistic.pdf,
+you will see that the data for FCFS ends at 15000ms, while MQFS ends at 17500 and RR at 16000. This is a 1 second difference between the 
+fastest program and the new MFQS with modfications to queue2. This is assuming that you run the program without interruption or using finite timeslices.
+
+For more detailed data, please view the statistics.pdf and the gantt charts inside. (gantt charts are hard to make in excel, maybe open 
+this part of the report to hand drawn charts next time :) )

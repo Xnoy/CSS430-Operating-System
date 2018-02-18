@@ -1,0 +1,9 @@
+The MLQS algorithim is made up three Vectors that will be used like queues, ie FIFO. Each one of these queues are in essense a different priority in the scheduler.
+When starting the scheduler, the run() method will start causing the program to go into an infinite loop. In this loop, the scheduler will check if any threads are in the queue 0, then 1, then 2.
+
+Any threads added to the scheduler start in queue0 and will be moved to the next queue after the time quantum has expired. Each thread will run for 500ms in queue0 before being move to queue1. In queue1, the thread will run for 500ms, then check if queue0 has new threads, then run for another 500ms before being moved into queue2. Like queue1, queue2 will run for 500ms, then check the previous queues for new threads, run for another 500ms and then repeat the check and run two more times before moving the thread to the back of queue2. This means queue0 runs the thread for 500ms, queue1 for 1000ms, and queue2 for 2000ms.
+
+It is important to note that the only time a thread will be removed from the queues is at the beginning before the thread is started/resumed. If the thread is found completed at that time, it will be removed from the queue and the scheduler will re-run run().
+It is also important to note that after a thread has been moved to the next queue, the scheduler returns to the run() method.
+
+For a visual see the provided flow char called "Execution Flow Chart.png".
