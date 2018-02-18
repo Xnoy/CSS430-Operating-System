@@ -1,0 +1,9 @@
+SPECS
+
+Part two was comprised of building Test3. Test3 was built to stress the CPU with a computational thread and stress the DISK with a variety of Read/writes. These two threads are done in pairs in which the user specifies how many pair to create when running Test3. These tests were broken into two classes, TestThread3a and TestThread3b.
+
+TestThread3a was responsible for stressing the CPU by doing a series of computations. The value that it creates is irrelvant and the algorithim it uses is a random creation. The main goal of this class was to do a series of computation in the thread to use the CPU. After it will cout "done comp" and exits.
+
+
+TestThread3b was responsible for stressing the DISK with read/writes to that DISK. This was done by going through each block in the DISK (1000) and WRITING and READING from that location. After that loop, it cout "done read write" and exits.
+

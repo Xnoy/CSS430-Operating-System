@@ -1,0 +1,9 @@
+Part 1 was comprised of building the WAIT and EXIT cases in the kernel using a  Queue array that stored a vector queue of sleeping threads. The overall goal of part 1 was for the Shell and the loader to wait for the termination and EXIT of a process.
+
+This was done by creating a class called SyncQueue that would create an array of QueueNode objects when created. Once created, SyncQueue has two methods for adding and removing threads from the QueueNodes. Those are enqueueAndSleep and dequeueAndWakeUp; they use QueueNode sleep and wakeup as need to store the threads inside the SyncQueue array's QueueNode.
+
+QueueNode when created makes a Vector that will hold an integer representing the Thread ID. With the two functions mentioned earlier, it can put threads to sleep and wake them up while in the critical section. 
+
+The results of this part was to make sure that the loader waited for the termination of the Shell. The shell was waiting for the terminated of Test2. This was visible when the Shell[n] would prompt after thread[d] completed. Then when we typed exit into the shell, the loader prompted -->. 
+
+To view expected output, view the Part 1 Running file

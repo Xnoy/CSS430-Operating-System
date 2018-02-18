@@ -1,0 +1,75 @@
+Old Kernel Code (SpinLocks)
+
+cam@cam-desktop:/media/cam/USB/Prog3/ThreadOS2$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test3 6
+l Test3 6
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=1)
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=1)
+threadOS: a new thread (thread=Thread[Thread-13,2,main] tid=5 pid=1)
+threadOS: a new thread (thread=Thread[Thread-15,2,main] tid=6 pid=1)
+threadOS: a new thread (thread=Thread[Thread-17,2,main] tid=7 pid=1)
+threadOS: a new thread (thread=Thread[Thread-19,2,main] tid=8 pid=1)
+threadOS: a new thread (thread=Thread[Thread-21,2,main] tid=9 pid=1)
+threadOS: a new thread (thread=Thread[Thread-23,2,main] tid=10 pid=1)
+threadOS: a new thread (thread=Thread[Thread-25,2,main] tid=11 pid=1)
+threadOS: a new thread (thread=Thread[Thread-27,2,main] tid=12 pid=1)
+threadOS: a new thread (thread=Thread[Thread-29,2,main] tid=13 pid=1)
+done comp
+done comp
+done comp
+done comp
+done comp
+done comp
+done read write
+done read write
+done read write
+done read write
+done read write
+done read write
+elapsed time = 313997 msec 
+
+
+
+New Kernel Code (No SpinLock)
+
+cam@cam-desktop:/media/cam/USB/Prog3/ThreadOS2$ javac Kernel.java 
+Note: Kernel.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+cam@cam-desktop:/media/cam/USB/Prog3/ThreadOS2$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test3 6
+l Test3 6
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=1)
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=1)
+threadOS: a new thread (thread=Thread[Thread-13,2,main] tid=5 pid=1)
+threadOS: a new thread (thread=Thread[Thread-15,2,main] tid=6 pid=1)
+threadOS: a new thread (thread=Thread[Thread-17,2,main] tid=7 pid=1)
+threadOS: a new thread (thread=Thread[Thread-19,2,main] tid=8 pid=1)
+threadOS: a new thread (thread=Thread[Thread-21,2,main] tid=9 pid=1)
+threadOS: a new thread (thread=Thread[Thread-23,2,main] tid=10 pid=1)
+threadOS: a new thread (thread=Thread[Thread-25,2,main] tid=11 pid=1)
+threadOS: a new thread (thread=Thread[Thread-27,2,main] tid=12 pid=1)
+threadOS: a new thread (thread=Thread[Thread-29,2,main] tid=13 pid=1)
+done comp
+done comp
+done comp
+done comp
+done comp
+done comp
+done read write
+done read write
+done read write
+done read write
+done read write
+done read write
+elapsed time = 275578 msec 
+

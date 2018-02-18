@@ -1,0 +1,31 @@
+cam@cam-desktop:~/Desktop/prog 4/ThreadOS$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 -enabled 5
+l Test4 -enabled 5
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+Test Type: Random Access. (cache enabled?: true) Avg Write(36 msec), Read(37 msec)
+Test Type: Localized Access. (cache enabled?: true) Avg Write(1 msec), Read(0 msec)
+Test Type: Mixed Access. (cache enabled?: true) Avg Write(11 msec), Read(12 msec)
+Test Type: Adversary Access. (cache enabled?: true) Avg Write(68 msec), Read(69 msec)
+-->l Test4 -disabled 5
+l Test4 -disabled 5
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=0)
+Test Type: Random Access. (cache enabled?: false) Avg Write(37 msec), Read(37 msec)
+Test Type: Localized Access. (cache enabled?: false) Avg Write(201 msec), Read(201 msec)
+Test Type: Mixed Access. (cache enabled?: false) Avg Write(25 msec), Read(25 msec)
+Test Type: Adversary Access. (cache enabled?: false) Avg Write(69 msec), Read(69 msec)
+-->
+
+Random Access Performance Considerations
+When looking at the random access results for both cache and noncache disk access, we notice that they are strikingly similar. This is because the chance that the a random assortment of disk locations/blocks between 0 and 512 is going to be very diverse. The chances that the same number is going to be in the same ten block set is very slim. Because of this, the cache and non cache perform similarly because both are accessing the disk signficantly making act similar to the adverse accesses.
+
+Localized Access Considerations
+The cached version of the disk performs signifcantly better than the non-cached version. The cached version performs almost 0 in both read and write because they are being read/written to main memory rather than the disk itself. When we write/read to the disk, we get a large overhead of I/Os causing it to slow down significantly. 
+
+Mixed Accesses Considerations
+This is the most represenative of an actually OS. In this test, the cached disk performed better than the non cached verson by about 100%. This is because the cached version still had to do some disk accesses causing it to slow down. But it did not have to do constant disk accesses like the non cached version. This can be seen with the random accesses vs the localized accesses of the pervious two tests.
+
+Adversary Access Considerations
+Because this test was to make the worst use of a cached system, we wanted to increase the disk accesses as much as possible. We did this by doing a sequentual write and read that would cause the cache to write and read constantly. This is because none of the same block would be called in this scenario. In affect, cached vs non cached performed similar. (Much like random access)

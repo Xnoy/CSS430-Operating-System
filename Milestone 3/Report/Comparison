@@ -1,0 +1,7 @@
+RESULTS/COMPARISON
+
+When running the Test3 in both the old Kernel and the new Kernel, we noticed that the new Kernel (the one that does not implement spinlocks and allows the thread to sleep) finishes faster than the old kernel (that implements Spinlocks). 
+
+This was seen when we ran the Test3 on the old kernel and the new kernel with X = 6. This meant that we created 6 pairs of each TestThread3a and TestThread3b and running them until completion. When comparing the results that are found in "Part 2 Running code", we see that the old kernel takes 313997 ms while the new kernel takes 275578 ms. This is almost a 38 second difference (38419 ms to be exact) that will keep increasing as the X increases. Even when I ran the Test with X = 4, the difference between the two kernel was a little over a 10 second difference.
+
+It is good to note that this data will vary based on that machine due to the # of cores and threads that the CPU has. But I conclude that the kernel that does not implement spinlocks runs faster than the one that does.

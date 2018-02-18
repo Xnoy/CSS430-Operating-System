@@ -1,0 +1,29 @@
+Testing Shell. java 
+
+First, make sure that Shell.java has all supporting source code to run in the same folder.
+Second, change directory to the same folder that the Shell.java resides.
+Thridly, in the directory of Shell.java, compile and run ThreadOS. To do that, use the following commands...
+	~$ javac Shell.java
+	~$ java Boot
+	--> l Shell
+	shell[1]% 
+Fourth, run any executable in the same directory as ThreadOS and Shell.java that ends in the .class extension. 
+For example...
+	Shell[1]% PingPong abc 100  ; PingPong xyz 50  ; PingPong 123 100
+
+Please notice that all commands have delimiters (';' AND '&') between them, with the exception of the last command. In this case, if the last command does not have a delimiter, the program assumes that it is a ';' or sequential running of processes. If there was only one command, the same rule would follow unless other delimiter was specified.
+
+---------------------------------------
+Shell.java implementation
+
+The Shell in its most basic terms reads in a series of commands from the user and parses them into individual command. If the only command is "exit" the program will end. 
+
+The way that the Shell reads in commands is as follows. It first creates a StringBuffer in which a SysLib (.cin) method will allow us to read input from the user into. Next we convert the buffer into a string, then into a string array using another SysLib method. After, we loop through each part that was parsed, add it to a string, and look for a delimeter using the "processCommand" method. Once a delimeter is found, it will convert the string command into another string array and use the SysLib.exec() to process the command. If the delimiter was ';', we use the SysLib.join() method to wait for the process to terminate before continuing. Otherwise we continue processing commands if it is '&'. If the user ever enter exit, the program will end and return to threadOS.
+------------------------------------
+processes.cpp implentation
+
+This program is to mimic the follow linux command "ps -A | grep argv[1] | wc -l" that will count the number of instances of a running process given a process name.
+
+This program is broken down into three main method, not including the main. Each of these methods are responsible for managing one processes in the program. Of the three main methods, their general structure is to first fork, followed by error checking the fork, then by either a wait call if in the parent to wait for the child's termination or a call to the other method to follow the same structure, and finally return to the parent and finish the process. In the great grand child, it will close pipes and execute the PS process command over the current process.
+
+In addition to this, there are two pipes that allow for data transfer between the three processes. The first pipe is between the WC process and the grep process. The second pipe is between the grep process and the PS process. In theory, the PS process could communicate with the WC process, however this would not accomplish what we would need. 

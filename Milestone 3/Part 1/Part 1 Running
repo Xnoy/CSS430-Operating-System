@@ -1,0 +1,29 @@
+cam@cam-desktop:/media/cam/USB/Prog3/ThreadOS2$ java Boot
+threadOS ver 1.0:
+threadOS: DISK created
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Shell
+l Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+shell[1]% l Test2
+l
+java.lang.ClassNotFoundException: l
+shell[2]% Test2
+Test2
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=2)
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=2)
+threadOS: a new thread (thread=Thread[Thread-13,2,main] tid=5 pid=2)
+threadOS: a new thread (thread=Thread[Thread-15,2,main] tid=6 pid=2)
+threadOS: a new thread (thread=Thread[Thread-17,2,main] tid=7 pid=2)
+Thread[b]: response time = 3999 turnaround time = 4999 execution time = 1000
+Thread[e]: response time = 6998 turnaround time = 7499 execution time = 501
+Thread[c]: response time = 4998 turnaround time = 8000 execution time = 3002
+Thread[a]: response time = 2998 turnaround time = 8002 execution time = 5004
+Thread[d]: response time = 5998 turnaround time = 12003 execution time = 6005
+shell[3]% exit
+exit
+-->q
+q
+

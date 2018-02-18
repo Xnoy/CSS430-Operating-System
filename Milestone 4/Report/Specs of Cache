@@ -1,0 +1,13 @@
+Specifcation of Cache
+
+Cache.java is a program that is meant to act as a disk caching program that would allow for increased reads and writes due to localized data. This program was based on the Second Chance Algorithm to allow for the cache to read, write, flush, and sync cache blocks as needed. The Second chance alogrithm itself was used to find victims to be written back the disk and replaced by new data/cacheblocks. As these caches were modified, their refernece bits and dirty bits were changed to reflect usages and if it would need to be writtent to the disk if it became a victim. 
+
+The second chance alogrithm would loop over the cache trying to find a cach block of reference bit = 0 and dirty bit = 0. If no cacheblock met this requirement upon the start of the second loop through the data, it would choose the first reference bit = 0 and dirty bit = 1. It was implemented this way for two reasons, the first being that it would be costly to loop through the cache again to check the bits and that dimpsey said we could implement it this way if we pleased. 
+Due note that it could be implement to have a second pass through by changing the "loopCount"} variable to -1 or changing the respected if statement to loopCount == 2 in the findVictim method.
+
+The read method is rather simple. The user provides a blockId and a buffer for the data they want to retrieve. If the blockId is found in the cache, the data is copied from the cache to the buffer. If the cache does not have the data, it will be copied from the disk to the cache then into the buffer. If there is no room in the cache, it will find a victim and write to the disk as needed before overwriting that block with new data from the disk. The second chance algorithm is used to find the victim. If it does as needed, it returns true, otherwise false.
+
+The write method will first try to find the blockId provided in the cache. If found, it will write onto that location making that block dirty. If not found, it will write the data to an empty location in the block. If there is no room in the cache, the SCA will find a victim, write as needed to the disk, and then write to the cache.  If it does as needed, it returns true, otherwise false.
+
+Sync will write all dirty blocks to the cache. Flush will invalidate all blocks in the cache.
+

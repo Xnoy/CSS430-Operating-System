@@ -1,0 +1,101 @@
+PART 1 OUTPUTS
+Script started on Sun 09 Apr 2017 01:25:42 PM PDT
+Script started, file is output.txt
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ g++ processes.cpp -o processes
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ ./processes kworker
+34
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ ps -A | grep kworker | wc -l
+34
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ ./processes sshd
+0
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ ps -A | grep sshd | wc -l
+0
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ ./processes scsi 
+18
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ ps -A | grep scsi | wc -l
+18
+cam@cam-desktop:~/CSS430/ThreadOS/prog1$ exit
+exit
+
+
+Script done on Sun 09 Apr 2017 01:26:59 PM PDT
+
+PART 2 OUTPUTS
+cam@cam-desktop:~/CSS430/ThreadOS/CompileFolder$ javac Shell.java 
+cam@cam-desktop:~/CSS430/ThreadOS/CompileFolder$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Shell
+l Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+Shell[1]% 
+Shell[1]% PingPong abc 100  ; PingPong xyz 50  ; PingPong 123 100
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc 
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=1)
+xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz 
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=1)
+123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 
+Shell[2]% PingPong abc 50   ; PingPong xyz 100 & PingPong 123 100
+threadOS: a new thread (thread=Thread[Thread-13,2,main] tid=5 pid=1)
+abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc 
+threadOS: a new thread (thread=Thread[Thread-15,2,main] tid=6 pid=1)
+threadOS: a new thread (thread=Thread[Thread-17,2,main] tid=7 pid=1)
+xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz xyz 123 xyz 123 xyz 123 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 xyz 123 
+123 123 123 123 123 123 123 123 123 123 
+Shell[3]% PingPong abc 100  & PingPong xyz 100 ; PingPong 123 50
+threadOS: a new thread (thread=Thread[Thread-19,2,main] tid=8 pid=1)
+threadOS: a new thread (thread=Thread[Thread-21,2,main] tid=9 pid=1)
+abc abc abc abc abc abc abc abc abc abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz 
+xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz 
+threadOS: a new thread (thread=Thread[Thread-23,2,main] tid=10 pid=1)
+123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 
+Shell[4]% PingPong abc 50   & PingPong xyz 50  & PingPong 123 100
+threadOS: a new thread (thread=Thread[Thread-25,2,main] tid=11 pid=1)
+threadOS: a new thread (thread=Thread[Thread-27,2,main] tid=12 pid=1)
+threadOS: a new thread (thread=Thread[Thread-29,2,main] tid=13 pid=1)
+abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz 
+xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 
+123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 
+Shell[5]% PingPong abc 50   & PingPong xyz 50  & PingPong 123 100 &
+threadOS: a new thread (thread=Thread[Thread-31,2,main] tid=14 pid=1)
+threadOS: a new thread (thread=Thread[Thread-33,2,main] tid=15 pid=1)
+threadOS: a new thread (thread=Thread[Thread-35,2,main] tid=16 pid=1)
+Shell[6]% abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz 
+xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 xyz xyz 123 
+123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123
+                              
+Shell[6]% PingPong abc 50   & PingPong xyz 50  & PingPong 123 100 & PingPong abc 50   & PingPong xyz 50  & PingPong 123 100 & PingPong abc 50   & PingPong xyz 50  & PingPong 123 100 & PingPong abc 50   & PingPong xyz 50  & PingPong 123 100 & PingPong abc 50   & PingPong xyz 50  & PingPong 123 100 &
+threadOS: a new thread (thread=Thread[Thread-37,2,main] tid=17 pid=1)
+threadOS: a new thread (thread=Thread[Thread-39,2,main] tid=18 pid=1)
+threadOS: a new thread (thread=Thread[Thread-41,2,main] tid=19 pid=1)
+threadOS: a new thread (thread=Thread[Thread-43,2,main] tid=20 pid=1)
+threadOS: a new thread (thread=Thread[Thread-45,2,main] tid=21 pid=1)
+threadOS: a new thread (thread=Thread[Thread-47,2,main] tid=22 pid=1)
+threadOS: a new thread (thread=Thread[Thread-49,2,main] tid=23 pid=1)
+threadOS: a new thread (thread=Thread[Thread-51,2,main] tid=24 pid=1)
+threadOS: a new thread (thread=Thread[Thread-53,2,main] tid=25 pid=1)
+threadOS: a new thread (thread=Thread[Thread-55,2,main] tid=26 pid=1)
+threadOS: a new thread (thread=Thread[Thread-57,2,main] tid=27 pid=1)
+threadOS: a new thread (thread=Thread[Thread-59,2,main] tid=28 pid=1)
+threadOS: a new thread (thread=Thread[Thread-61,2,main] tid=29 pid=1)
+threadOS: a new thread (thread=Thread[Thread-63,2,main] tid=30 pid=1)
+threadOS: a new thread (thread=Thread[Thread-65,2,main] tid=31 pid=1)
+Shell[7]% abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc 123 xyz abc xyz abc abc 123 xyz abc abc xyz abc abc 123 xyz abc abc xyz abc abc 123 xyz abc abc xyz abc abc 123 xyz abc abc xyz abc abc 123 xyz abc abc xyz abc abc 123 xyz abc abc xyz abc 123 abc xyz abc abc xyz abc 123 abc xyz abc abc xyz abc 123 abc xyz abc abc xyz abc 123 abc xyz abc abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc xyz 123 abc xyz abc xyz abc xyz abc 123 123 xyz abc xyz 
+xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz 123 123 xyz abc xyz xyz abc xyz abc 123 123 xyz abc 
+abc xyz abc abc 123 123 xyz abc abc xyz abc abc 123 123 xyz abc abc xyz abc abc 123 123 xyz abc abc xyz abc abc 123 123 xyz abc abc xyz abc abc 123 123 xyz abc abc xyz abc abc 123 123 xyz abc abc xyz abc 123 abc 123 xyz abc abc xyz abc 123 abc 123 xyz abc abc xyz abc 123 abc 123 xyz abc abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc xyz 123 abc 123 xyz abc xyz abc xyz abc 123 xyz 123 abc 123 xyz 
+xyz abc xyz 123 123 xyz abc 123 xyz xyz abc xyz 123 123 xyz abc 123 xyz xyz abc xyz 123 123 xyz abc 123 xyz xyz abc xyz 123 123 xyz 123 abc xyz xyz abc xyz 123 123 xyz 123 abc xyz xyz abc xyz 123 123 xyz 123 abc xyz xyz abc xyz 123 123 xyz 123 abc xyz xyz abc xyz 123 123 xyz 123 abc xyz xyz abc xyz 123 123 xyz 123 abc xyz xyz abc xyz abc 123 123 xyz 123 abc 
+abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 123 xyz abc abc xyz abc 123 abc 123 123 xyz abc abc xyz abc 123 abc 123 123 xyz abc abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc 123 xyz 123 abc 123 123 xyz 
+xyz abc xyz 123 xyz 123 abc 123 123 xyz xyz abc xyz 123 xyz 123 abc 123 123 xyz xyz abc xyz 123 xyz 123 abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz 123 abc 123 xyz xyz abc xyz 123 123 xyz 123 abc 123 xyz xyz abc xyz abc 123 123 xyz 123 abc 
+
+abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc abc 123 123 xyz 123 abc abc xyz abc 123 abc 123 xyz 123 abc abc xyz abc 123 abc 123 xyz 123 abc abc xyz abc 123 abc 123 xyz 123 abc abc xyz abc 123 abc 123 123 xyz abc abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc xyz 123 abc 123 123 xyz abc xyz abc xyz abc 123 xyz 123 abc 123 123 xyz 
+xyz abc xyz 123 xyz 123 abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 123 xyz xyz abc xyz 123 123 xyz abc 123 
+
+xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 xyz 123 abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz abc xyz abc 123 123 123 xyz 
+xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 123 xyz xyz 123 123 
+
+123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 
+123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 
+
+

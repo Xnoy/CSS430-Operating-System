@@ -1,0 +1,19 @@
+cam@cam-desktop:~/Desktop/prog 4/ThreadOS$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 -enabled 5
+l Test4 -enabled 5
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+Test Type: Random Access. (cache enabled?: true) Avg Write(36 msec), Read(37 msec)
+Test Type: Localized Access. (cache enabled?: true) Avg Write(1 msec), Read(0 msec)
+Test Type: Mixed Access. (cache enabled?: true) Avg Write(11 msec), Read(12 msec)
+Test Type: Adversary Access. (cache enabled?: true) Avg Write(68 msec), Read(69 msec)
+-->l Test4 -disabled 5
+l Test4 -disabled 5
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=0)
+Test Type: Random Access. (cache enabled?: false) Avg Write(37 msec), Read(37 msec)
+Test Type: Localized Access. (cache enabled?: false) Avg Write(201 msec), Read(201 msec)
+Test Type: Mixed Access. (cache enabled?: false) Avg Write(25 msec), Read(25 msec)
+Test Type: Adversary Access. (cache enabled?: false) Avg Write(69 msec), Read(69 msec)
+-->
